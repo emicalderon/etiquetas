@@ -12,16 +12,17 @@ body {
   align-items: flex-start;
   padding: 20px;
   gap: 20px;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .panel {
-  flex: 1 1 400px; 
+  flex: 1 1 400px;
   background: white;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.2s;
+  max-width: 100%;
 }
 
 .panel:hover {
@@ -40,17 +41,18 @@ label {
 
 select {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin: 10px 0 20px 0;
   border-radius: 8px;
   border: 1px solid #ccc;
+  font-size: 1em;
 }
 
 #resultado, #resultado-js {
   background: #eef3f6;
   padding: 15px;
   border-radius: 8px;
-  font-size: 0.95em;
+  font-size: 1em;
   overflow-x: auto;
 }
 
@@ -58,17 +60,17 @@ code {
   display: block;
   background: #222;
   color: #0f0;
-  padding: 10px;
+  padding: 12px;
   border-radius: 6px;
   white-space: pre-wrap;
   font-family: Consolas, monospace;
 }
 
-
+/* 📱 TABLET */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
-    padding: 10px;
+    padding: 15px;
   }
 
   .panel {
@@ -77,24 +79,42 @@ code {
   }
 
   h1 {
-    font-size: 1.3em;
+    font-size: 1.4em;
   }
 
   select {
-    font-size: 1em;
+    font-size: 1.05em;
   }
 }
 
+/* 📱📱 CELULAR */
 @media (max-width: 480px) {
   body {
-    font-size: 0.95em;
+    font-size: 1.05em;
   }
 
-  code {
-    font-size: 0.85em;
+  .container {
+    padding: 10px;
+    gap: 15px;
   }
 
   .panel {
-    padding: 15px;
+    padding: 18px;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 1.3em;
+  }
+
+  code {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+
+  select {
+    padding: 14px;
+    font-size: 1.1em;
   }
 }
