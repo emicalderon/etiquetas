@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Diccionario HTML & JavaScript</title>
+  <link rel="stylesheet" href="inicio.css">
+</head>
+<body>
+
+ 
+  <div class="menu-icon" onclick="toggleInfo()">⋮</div>
+
+
+  <div id="info-panel" class="info-panel">
+    <h2>Autor</h2>
+    <p><strong>Calderón Joaquín</strong></p>
+
+    <h3>Código QR</h3>
+    <img src="qr.png" alt="Código QR" width="120">
+
+    <h3>Instagram</h3>
+    <a href="https://www.instagram.com/07emilianoo" target="_blank">@07emilianoo</a>
+  </div>
+
+ 
+  <div class="portada">
+    <div class="contenido">
+      <h1>Diccionario HTML y JavaScript</h1>
+      <p>Aprendé las etiquetas y conceptos básicos de programación web.</p>
+      <button onclick="irADiccionario()">Empezar</button>
+    </div>
+  </div>
+
+  <script>
+    function irADiccionario() {
+      window.location.href = "index.html"; 
+    }
+
+    function toggleInfo() {
+      const panel = document.getElementById("info-panel");
+      panel.classList.toggle("visible");
+    }
+  </script>
+
+</body>
+</html>

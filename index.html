@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Diccionario de HTML, CSS y JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- PANEL HTML -->
+  <div class="panel html-panel">
+    <h1>Etiquetas HTML</h1>
+    <p><strong>¿Qué es HTML?</strong> Es el lenguaje que estructura el contenido de una página web. Permite organizar textos, imágenes, videos, secciones y más.</p>
+<p><strong>¿Para qué sirve?</strong> Sirve para definir la base de cualquier sitio web, indicando qué elementos aparecen y en qué orden.</p>
+<p><strong>¿Cómo se usa?</strong> Se utilizan <em>etiquetas</em> que van entre &lt; &gt;, cada una con una función específica. Por ejemplo: &lt;p&gt; para párrafos, &lt;img&gt; para imágenes, etc.</p>
+
+    <label for="opcion-html">Elige una etiqueta:</label>
+    <select id="opcion-html" onchange="mostrarEtiquetaHTML()">
+      <option value="">Elegí una etiqueta</option>
+      <optgroup label="Head">
+        <option value="head">&lt;head&gt;</option>
+        <option value="title">&lt;title&gt;</option>
+        <option value="meta">&lt;meta&gt;</option>
+        <option value="link">&lt;link&gt;</option>
+      </optgroup>
+      <optgroup label="Body">
+        <option value="body">&lt;body&gt;</option>
+        <option value="header">&lt;header&gt;</option>
+        <option value="footer">&lt;footer&gt;</option>
+        <option value="section">&lt;section&gt;</option>
+        <option value="article">&lt;article&gt;</option>
+        <option value="nav">&lt;nav&gt;</option>
+        <option value="aside">&lt;aside&gt;</option>
+      </optgroup>
+      <optgroup label="Texto">
+        <option value="h1">&lt;h1&gt;</option>
+        <option value="p">&lt;p&gt;</option>
+        <option value="strong">&lt;strong&gt;</option>
+        <option value="em">&lt;em&gt;</option>
+      </optgroup>
+      <optgroup label="Listas">
+        <option value="ul">&lt;ul&gt;</option>
+        <option value="ol">&lt;ol&gt;</option>
+        <option value="li">&lt;li&gt;</option>
+      </optgroup>
+      <optgroup label="Multimedia">
+        <option value="img">&lt;img&gt;</option>
+        <option value="audio">&lt;audio&gt;</option>
+        <option value="video">&lt;video&gt;</option>
+      </optgroup>
+      <optgroup label="Tablas">
+        <option value="table">&lt;table&gt;</option>
+        <option value="tr">&lt;tr&gt;</option>
+        <option value="td">&lt;td&gt;</option>
+      </optgroup>
+      <optgroup label="Formularios">
+        <option value="form">&lt;form&gt;</option>
+        <option value="input">&lt;input&gt;</option>
+        <option value="button">&lt;button&gt;</option>
+      </optgroup>
+      <optgroup label="Scripts">
+        <option value="script">&lt;script&gt;</option>
+      </optgroup>
+    </select>
+    <div id="resultado"></div>
+  </div>
+
+  <!-- PANEL CSS -->
+  <div class="panel css-panel">
+    <h1>Conceptos de CSS</h1>
+    <p><strong>¿Qué es CSS?</strong> Es el lenguaje que da estilo a una página web.</p>
+<p><strong>¿Para qué sirve?</strong> Sirve para hacer que un sitio se vea atractivo.</p>
+
+    <label for="opcion-css">Elige una propiedad:</label>
+    <select id="opcion-css" onchange="mostrarEjemploCSS()">
+      <option value="">Elegí un ejemplo</option>
+      <option value="color">Color del texto</option>
+      <option value="background">Fondo</option>
+      <option value="border">Borde</option>
+      <option value="margin">Margen</option>
+      <option value="padding">Padding</option>
+      <option value="font">Tipografía</option>
+      <option value="align">Alineación de texto</option>
+      <option value="hover">Efecto hover</option>
+    </select>
+    <div id="resultado-css"></div>
+  </div>
+
+  <!-- PANEL JAVASCRIPT -->
+  <div class="panel js-panel">
+    <h1>Conceptos de JavaScript</h1>
+    <p><strong>¿Qué es JavaScript?</strong> Es el lenguaje que da interactividad y lógica a las páginas web. Permite que tu sitio “haga cosas”.</p>
+<p><strong>¿Para qué sirve?</strong> Sirve para crear acciones dinámicas como animaciones, validación de formularios, cálculos, menús interactivos y mucho más.</p>
+<p><strong>¿Cómo se usa?</strong> Se escribe dentro de &lt;script&gt; o en archivos externos .js, usando variables, condiciones, funciones y eventos.</p>
+
+    <label for="opcion-js">Elige un tema:</label>
+    <select id="opcion-js" onchange="mostrarEjemploJS()">
+      <option value="">Elegí un ejemplo</option>
+      <option value="js-var">Declarar variable</option>
+      <option value="js-suma">Sumar</option>
+      <option value="js-resta">Restar</option>
+      <option value="js-dividir">Dividir</option>
+      <option value="js-if">Uso de if / else</option>
+      <option value="js-while">Ciclo while</option>
+      <option value="js-do-while">Ciclo do while</option>
+    </select>
+    <div id="resultado-js"></div>
+  </div>
+
+  <script>
+   
+    const ejemplosHTML = {
+      head: `<h2>&lt;head&gt;</h2><p>Contiene metadatos e información no visible del documento.</p>`,
+      title: `<h2>&lt;title&gt;</h2><p>Muestra el título en la pestaña del navegador.</p><code>&lt;title&gt;Mi página&lt;/title&gt;</code>`,
+      meta: `<h2>&lt;meta&gt;</h2><p>Define metadatos, como la codificación o descripción de la página.</p>`,
+      link: `<h2>&lt;link&gt;</h2><p>Vincula archivos externos, como hojas de estilo CSS.</p><code>&lt;link rel="stylesheet" href="style.css"&gt;</code>`,
+      body: `<h2>&lt;body&gt;</h2><p>Contiene el contenido visible del documento HTML.</p>`,
+      header: `<h2>&lt;header&gt;</h2><p>Encabezado de una página o sección.</p><header><h1>Mi sitio web</h1></header>`,
+      footer: `<h2>&lt;footer&gt;</h2><p>Pie de página.</p><footer>© 2025 Mi sitio</footer>`,
+      section: `<h2>&lt;section&gt;</h2><p>Define una sección temática.</p><section><h2>Noticias</h2></section>`,
+      article: `<h2>&lt;article&gt;</h2><p>Artículo independiente.</p>`,
+      nav: `<h2>&lt;nav&gt;</h2><p>Contiene enlaces de navegación.</p>`,
+      aside: `<h2>&lt;aside&gt;</h2><p>Contenido lateral.</p>`,
+      h1: `<h2>&lt;h1&gt;</h2><p>Título principal.</p><h1>Ejemplo</h1>`,
+      p: `<h2>&lt;p&gt;</h2><p>Párrafo de texto.</p>`,
+      strong: `<h2>&lt;strong&gt;</h2><p>Texto importante.</p>`,
+      em: `<h2>&lt;em&gt;</h2><p>Énfasis en texto.</p>`,
+      ul: `<h2>&lt;ul&gt;</h2><p>Lista desordenada.</p>`,
+      ol: `<h2>&lt;ol&gt;</h2><p>Lista ordenada.</p>`,
+      li: `<h2>&lt;li&gt;</h2><p>Elemento de lista.</p>`,
+      img: `<h2>&lt;img&gt;</h2><p>Inserta una imagen.</p>`,
+      audio: `<h2>&lt;audio&gt;</h2><p>Reproduce sonido.</p>`,
+      video: `<h2>&lt;video&gt;</h2><p>Reproduce video.</p>`,
+      table: `<h2>&lt;table&gt;</h2><p>Tabla de datos.</p>`,
+      tr: `<h2>&lt;tr&gt;</h2><p>Fila de tabla.</p>`,
+      td: `<h2>&lt;td&gt;</h2><p>Celda de tabla.</p>`,
+      form: `<h2>&lt;form&gt;</h2><p>Formulario.</p>`,
+      input: `<h2>&lt;input&gt;</h2><p>Campo de entrada.</p>`,
+      button: `<h2>&lt;button&gt;</h2><p>Botón.</p>`,
+      script: `<h2>&lt;script&gt;</h2><p>Incorpora código JavaScript.</p>`
+    };
+
+    function mostrarEtiquetaHTML() {
+      let opcion = document.getElementById("opcion-html").value;
+      document.getElementById("resultado").innerHTML = ejemplosHTML[opcion] || "";
+    }
+
+    /* ================= CSS ================= */
+    const ejemplosCSS = {
+      color: `<h2>Color del texto</h2><p>Usa <code>color</code> para cambiar el color del texto.</p>
+      <code>p { color: red; }</code>
+      <p style="color:red;">Ejemplo: texto rojo</p>`,
+
+      background: `<h2>Fondo</h2><p>Propiedad <code>background-color</code> define el color de fondo.</p>
+      <code>div { background-color: lightblue; }</code>
+      <div style="background-color: lightblue; padding:10px;">Ejemplo con fondo celeste</div>`,
+
+      border: `<h2>Borde</h2><p>Usa <code>border</code> para definir bordes.</p>
+      <code>div { border: 2px solid black; }</code>
+      <div style="border:2px solid black; padding:10px;">Caja con borde negro</div>`,
+
+      margin: `<h2>Margen</h2><p>Espacio exterior del elemento.</p>
+      <code>div { margin: 20px; }</code>
+      <div style="background:lightgreen; margin:20px;">Ejemplo con margen</div>`,
+
+      padding: `<h2>Padding</h2><p>Espacio interior del elemento.</p>
+      <code>div { padding: 15px; }</code>
+      <div style="background:lightcoral; padding:15px;">Ejemplo con padding</div>`,
+
+      font: `<h2>Tipografía</h2><p>Usa <code>font-family</code> y <code>font-size</code> para el texto.</p>
+      <code>p { font-family: Arial; font-size: 20px; }</code>
+      <p style="font-family:Arial; font-size:20px;">Texto con Arial 20px</p>`,
+
+      align: `<h2>Alineación de texto</h2><p>Usa <code>text-align</code> para alinear el texto.</p>
+      <code>p { text-align: center; }</code>
+      <p style="text-align:center;">Texto centrado</p>`,
+
+      hover: `<h2>Efecto hover</h2><p>Usa <code>:hover</code> para efectos al pasar el mouse.</p>
+      <code>button:hover { background: gold; }</code>
+      <button style="padding:10px;">Pasá el mouse por encima</button>`
+    };
+
+    function mostrarEjemploCSS() {
+      let opcion = document.getElementById("opcion-css").value;
+      document.getElementById("resultado-css").innerHTML = ejemplosCSS[opcion] || "";
+    }
+
+   
+    const ejemplosJS = {
+      "js-var": `<h2>Declarar variable</h2><code>let nombre = "Emiliano";<br>const edad = 16;</code>`,
+      "js-suma": `<h2>Sumar</h2><code>let a = 5;<br>let b = 3;<br>console.log(a + b);</code>`,
+      "js-resta": `<h2>Restar</h2><code>let a = 10;<br>let b = 4;<br>console.log(a - b);</code>`,
+      "js-dividir": `<h2>Dividir</h2><code>let a = 20;<br>let b = 5;<br>console.log(a / b);</code>`,
+      "js-if": `<h2>if / else</h2><code>if (edad >= 18) { console.log("Mayor de edad"); }</code>`,
+      "js-while": `<h2>while</h2><code>let i = 1;<br>while (i <= 5) { console.log(i); i++; }</code>`,
+      "js-do-while": `<h2>do while</h2><code>let i = 1;<br>do { console.log(i); i++; } while (i <= 5);</code>`
+    };
+
+    function mostrarEjemploJS() {
+      let opcion = document.getElementById("opcion-js").value;
+      document.getElementById("resultado-js").innerHTML = ejemplosJS[opcion] || "";
+    }
+  </script>
+</body>
+</html>
